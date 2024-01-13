@@ -1,0 +1,9 @@
+@use './colors';
+
+.primary-chart-bar-color {
+    background-color: colors.$soft-red;
+}
+
+.main-chart-bar-color {
+    background-color: colors.$cyan;
+}

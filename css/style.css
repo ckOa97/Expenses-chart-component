@@ -1,0 +1,174 @@
+.primary-chart-bar-color {
+  background-color: hsl(10, 79%, 65%);
+}
+
+.main-chart-bar-color {
+  background-color: hsl(186, 34%, 60%);
+}
+
+:root {
+  font-size: clamp(12px, 12px + 6 * (100vw - 320px) / 1280, 18px);
+}
+@media screen and (max-width: 280px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(27, 66%, 92%);
+  min-height: 100vh;
+  padding: 0.555rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(25, 47%, 15%);
+  font-family: "DM Sans", sans-serif;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  max-width: 32rem;
+  min-width: 220px;
+  width: 90%;
+  gap: 1rem;
+}
+@media screen and (max-width: 280px) {
+  body main {
+    width: 95%;
+  }
+}
+body main #my-balance-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.555rem;
+  padding: 2rem;
+  background-color: hsl(10, 79%, 65%);
+  color: hsl(33, 100%, 98%);
+}
+body main #my-balance-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media screen and (max-width: 420px) {
+  body main #my-balance-container div {
+    gap: 0;
+  }
+}
+body main #my-balance-container div span:first-of-type {
+  color: hsla(30, 100%, 98%, 0.75);
+}
+body main #my-balance-container div span:last-of-type {
+  font-size: 2rem;
+  font-weight: 700;
+}
+@media screen and (max-width: 420px) {
+  body main #my-balance-container div span:last-of-type {
+    font-size: 1.6rem;
+  }
+}
+body main #spending {
+  border-radius: 0.555rem;
+  padding: 2rem;
+  background-color: hsl(33, 100%, 98%);
+}
+@media screen and (max-width: 420px) {
+  body main #spending h1 {
+    font-size: 1.5rem;
+  }
+}
+body main #spending #chart {
+  display: flex;
+  height: 8.33rem;
+  justify-content: space-between;
+  align-items: end;
+  padding: 3.33rem 0;
+  box-sizing: content-box;
+  border-bottom: 1px solid hsl(27, 66%, 92%);
+  margin-bottom: 2.05rem;
+}
+body main #spending #chart div {
+  height: 0%;
+  transition: height 1s;
+  width: 11%;
+  border-radius: 0.277rem;
+  position: relative;
+  cursor: pointer;
+}
+body main #spending #chart div span:first-of-type {
+  display: none;
+  position: absolute;
+  top: -2.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.555rem;
+  background-color: hsl(25, 47%, 15%);
+  color: hsl(33, 100%, 98%);
+  border-radius: 5px;
+}
+body main #spending #chart div span:last-of-type {
+  position: absolute;
+  bottom: -1.5rem;
+  width: 100%;
+  text-align: center;
+  color: hsl(28, 10%, 53%);
+  font-size: 0.9rem;
+}
+body main #spending #chart div:hover {
+  z-index: 1;
+}
+body main #spending #chart div:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.164);
+  border-radius: 5px;
+}
+body main #spending #chart div:hover span {
+  display: block;
+}
+body main #spending #total-this-month {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+body main #spending #total-this-month div {
+  display: flex;
+  flex-direction: column;
+}
+body main #spending #total-this-month div:first-of-type span:first-of-type {
+  margin-bottom: 0.7rem;
+  color: hsl(28, 10%, 53%);
+}
+body main #spending #total-this-month div:first-of-type span:last-of-type {
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 89%;
+}
+@media screen and (max-width: 420px) {
+  body main #spending #total-this-month div:first-of-type span:last-of-type {
+    font-size: 2rem;
+  }
+}
+body main #spending #total-this-month div:last-of-type span:first-of-type {
+  display: flex;
+  justify-content: end;
+  font-weight: 700;
+}
+body main #spending #total-this-month div:last-of-type span:last-of-type {
+  color: hsl(28, 10%, 53%);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,159 @@
+@use './colors';
+@use './dynamic-classes';
+
+:root {
+    font-size: clamp(12px, calc(12px + (18 - 12) * ((100vw - 320px) / (1600 - 320))), 18px);
+    @media screen and (max-width: 280px) {
+        font-size: 10px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: colors.$cream;
+    min-height: 100vh;
+    padding: .555rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: colors.$dark-brown;
+    font-family: 'DM Sans', sans-serif;
+    main {
+        @media screen and (max-width: 280px) {
+            width: 95%;
+        }
+        display: flex;
+        flex-direction: column;
+        max-width: 32rem;
+        min-width: 220px;
+        width: 90%;
+        gap: 1rem;
+        #my-balance-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: .555rem;
+            padding: 2rem;
+            background-color: colors.$soft-red;
+            color: colors.$very-pale-orange;
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                @media screen and (max-width: 420px) {
+                    gap: 0;
+                }
+                span:first-of-type {
+                    color: colors.$very-pale-orange-transparent;
+                }
+                span:last-of-type {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    @media screen and (max-width: 420px) {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+        #spending {
+            border-radius: .555rem;
+            padding: 2rem;
+            background-color: colors.$very-pale-orange;
+            h1 {
+                @media screen and (max-width: 420px) {
+                    font-size: 1.5rem;
+                }
+            }
+            #chart {
+                display: flex;
+                height: 8.33rem;
+                justify-content: space-between;
+                align-items: end;
+                padding: 3.33rem 0;
+                box-sizing: content-box;
+                border-bottom: 1px solid colors.$cream;
+                margin-bottom: 2.05rem;
+                div {
+                    height: 0%;
+                    transition: height 1s;
+                    width: 11%;
+                    border-radius: 0.277rem;
+                    position: relative;
+                    cursor: pointer;
+                    span:first-of-type {
+                        display: none;
+                        position: absolute;
+                        top: -2.8rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: .555rem;
+                        background-color: colors.$dark-brown;
+                        color: colors.$very-pale-orange;
+                        border-radius: 5px;
+                    }
+                    span:last-of-type {
+                        position: absolute;
+                        bottom: -1.5rem;
+                        width: 100%;
+                        text-align: center;
+                        color: colors.$medium-brown;
+                        font-size: .9rem;
+                    }
+                    &:hover {
+                        z-index: 1;
+                    }
+                    &:hover::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(255, 255, 255, 0.164);
+                        border-radius: 5px;
+                        
+                    }
+                    &:hover span {
+                        display: block;
+                    }
+                }
+
+            }
+            #total-this-month {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    &:first-of-type span:first-of-type {
+                        margin-bottom: .7rem;
+                        color: colors.$medium-brown;
+                    }
+                    &:first-of-type span:last-of-type {
+                        font-size: 2.7rem;
+                        font-weight: 700;
+                        line-height: 89%;
+                        @media screen and (max-width: 420px) {
+                            font-size: 2rem;
+                        }
+                    }
+                    &:last-of-type span:first-of-type {
+                        display: flex;
+                        justify-content: end;
+                        font-weight: 700;
+                    }
+                    &:last-of-type span:last-of-type {
+                        color: colors.$medium-brown;
+                    }
+                }
+            }
+        }
+    }
+}
