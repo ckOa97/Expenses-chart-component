@@ -75,6 +75,9 @@ body main #my-balance-container div span:last-of-type {
     font-size: 1.6rem;
   }
 }
+body main #my-balance-container img {
+  width: 4rem;
+}
 body main #spending {
   border-radius: 0.555rem;
   padding: 2rem;
